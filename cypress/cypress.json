@@ -1,0 +1,23 @@
+
+
+{
+    "baseUrl" : "https://www.speechpundit.com/#/",
+    "env" :{
+        "externalApi" : "https://jsonplaceholder.cypress.io/",
+        "email" :"sameera@applines.com",
+        "password":"root1235",
+        "firstname" : "sameera",
+        "lastname": "sks",
+        "email1" : "sameera+124@applines.com", 
+        "password1" : "root12345" ,
+        "Demail" :"sameera+8@applines.com",
+
+        "////Note" :" Always change the  email1(the email which we provide  while creating a new user  in sign up) before running the test "
+        
+     },
+    "watchForFileChanges":false,
+    "defaultCommandTimeout": 8000
+
+}
+
+

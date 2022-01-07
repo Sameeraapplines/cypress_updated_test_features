@@ -1,0 +1,22 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "cypress project",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cypress:open" :"cypress open --config baseUrl=https://www.speechpundit.com/#/"
+  },
+  "keywords": [
+    "e2e",
+    "tests",
+    "cypress",
+    "automation",
+    "frameworks"
+  ],
+  "author": "applines",
+  "license": "ISC",
+   "devDpendencies" :{
+     "cypress":"^5.3.0"
+   }
+}
