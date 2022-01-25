@@ -56,12 +56,42 @@ describe('profile updation', () => {
 
 describe('Changing profile picture', ()=>{
 
-  it.only('Choosing and changing the picture', function(){
-  cy.visit("https://dev02.speechpundit.com/#/user/profile")
+  beforeEach(function () {
+    // "this" points at the test context object
+    cy.fixture('profile').then((user) => {
+      // "this" is still the test context object
+      this.user = user
+    })
+  })
+  
+  
+  it('Recording', function(){
+  cy.visit("https://dev02.speechpundit.com/#/signin")
+  cy.get('#email').type(this.user.Email)
+      cy.get('#password').type(this.user.Password)
+      cy.get('.btn').click()
+      cy.contains('Record').click()  
+      cy.contains('Click here to practice your speech').click() 
+
+  // cy.visit(this.user.url)
   // cy.contains('Choose').click()
-  cy.get('.p-button-label').click()
-  cy.get('.changeProfilePic').click()
+  // cy.get('.p-button-label').click()
+  // cy.get('.changeProfilePic').click()
 
 
   })
+})
+
+describe('profile photo',()=>{
+  it.only('changing the profile picture',function(){
+    cy.visit("https://dev02.speechpundit.com/#/user/profile")
+    cy.contains('Choose').click()
+    cy.get('.p-button-label').dblclick()
+    cy.get('.p-button-icon').dblclick()
+
+
+  })
+
+
+
 })

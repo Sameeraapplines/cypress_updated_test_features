@@ -135,7 +135,7 @@ describe("Adding a student" ,() => {
 
 })
 describe("Adding a new student" ,() => {
-  it.only("Do not accept empty mandatory fields" , function(){
+  it("Do not accept empty mandatory fields" , function(){
       cy.visit('https://dev02.speechpundit.com/#/user/groups')
       cy.visit('https://dev02.speechpundit.com/#/user/groups/123')
       // cy.get('.text-capitalize').click()
@@ -149,6 +149,40 @@ describe("Adding a new student" ,() => {
 
       cy.get('.p-dialog-footer > .btn-primary').click()
       
+
+
+
+
+  })
+
+
+
+})
+describe("Assigning task" ,() => {
+  it.only("Allocating tasks to students in class" , function(){
+    cy.visit("https://dev02.speechpundit.com/#/home")
+    cy.contains('sign in').click()
+    cy.get('#email').type("sameera+779@applines.com")
+      cy.get('#password').type('root12345')
+      cy.get('form').submit()
+
+      cy.visit('https://dev02.speechpundit.com/#/user/groups')
+      cy.visit('https://dev02.speechpundit.com/#/user/groups/neww22')
+      cy.contains('Classwork').click()
+      cy.contains('New Assignment').click()
+      // cy.get('.form-select').click()
+      // cy.contains('Select Speech').select('Global Warming')
+      // cy.get('.form-select').select('Global Warming')
+      // cy.contains('Select Speech').click()
+      // cy.contains("Assigned Date").click()
+      
+      cy.get('#assignedDate').click()
+      cy.get('.p-datepicker-today > .ng-tns-c65-9').click()
+      cy.get('#dueDate').click()
+      cy.get(':nth-child(4) > :nth-child(5) > .ng-tns-c65-10').click()
+      // cy.get('#dueDate').click()
+      cy.get('.p-multiselect-label').type("divya")
+     
 
 
 

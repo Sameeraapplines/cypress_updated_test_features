@@ -21,6 +21,15 @@ describe('Coach interface in Dev02', () => {
       cy.contains('Activity')
       cy.contains('Record')
     })
+    it('Should return to homepage by signing out', function(){
+      cy.visit('https://dev02.speechpundit.com/#/signin')
+      cy.contains('Sign in').click()
+      cy.get('#email').type("sameera+779@applines.com")
+      cy.get('#password').type('root12345')
+      cy.get('form').submit()
+      cy.get('#menu-2\  > img').click()
+      
+  })
 })
 
 describe('Profile Menu', () => {

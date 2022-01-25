@@ -13,7 +13,7 @@ describe('Activity page', () => {
     it('Verifies availability and content of Activity page', function () {
       // this.user exists
       cy.visit("https://speechpundit.com/#/signin") //problem with email
-+
+
 
       // cy.contains('Email').type(this.data.Email)
       // cy.contains('Password').type(this.data.Password)
