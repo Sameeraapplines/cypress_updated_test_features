@@ -13,7 +13,7 @@ describe('Successful login Test', () => {
     })
   
     // the test callback is in "function () { ... }" form
-    it.only('verifies login succeeds with valid credentials', function () {
+    it('verifies login succeeds with valid credentials', function () {
       // this.user exists
       cy.visit("https://speechpundit.com/#/signin") //problem with email
 
@@ -49,6 +49,19 @@ describe('Unsuccessful login Test', () => {
     cy.get('#email').type(this.user.Email)
     cy.get('#password').type(this.user.Password1)
     cy.get('form').submit()
+
+  //   expect(this.user.Email).to.equal('sameera@applines.com')
+  })
+  it.only('verifies login fails with empty credentials', function () {
+    // this.user exists
+    cy.visit("https://speechpundit.com/#/signin") //problem with email
+
+
+    
+    cy.get('#email').type(this.user.Email)
+    // cy.get('#password').type(this.user.Password1)
+    cy.get('form').submit()
+    // cy.get('.ng-invalid.ng-dirty').click()
 
   //   expect(this.user.Email).to.equal('sameera@applines.com')
   })

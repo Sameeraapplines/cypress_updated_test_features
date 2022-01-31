@@ -101,7 +101,7 @@ describe('Zoom Group', () => {
         
   
   })
-  it.only('Activating the zoom icon', function(){
+  it('Activating the zoom icon', function(){
   
     cy.visit('https://dev02.speechpundit.com/#/user/groups')
           
@@ -129,5 +129,31 @@ describe('Zoom Group', () => {
     
         
   
+  })
+  it('Joining the meeting by clicking the zoom icon(coach side)', function(){
+  
+    cy.visit('https://dev02.speechpundit.com/#/record')
+    cy.contains('Sign in').click()
+    cy.get('#email').type("sameera+779@applines.com")
+      cy.get('#password').type("root12345")
+      cy.get('form').submit()
+      // cy.get(':nth-child(1) > .nav-link > img').click({force : true})
+      // cy.get(':nth-child(1) > .nav-link > img').trigger('mouseover')
+      cy.get(':nth-child(1) > .nav-link > img').invoke('show').click()
+
+
+          
+      
+  })
+  it.only('Joining the meeting by clicking the zoom icon(student side)', function(){
+    // cy.visit('https://dev02.speechpundit.com')
+    // cy.contains('Sign in').click()
+    // cy.get('#email').type("sameera+2022@applines.com")
+    //   cy.get('#password').type("root12345")
+    //   cy.get('form').submit()
+      cy.visit('https://dev02.speechpundit.com/#/record')
+    // cy.get(':nth-child(1) > .nav-link > img').invoke('show').click()
+    cy.get('.nav-link > img').invoke('show').click()
+
   })
 })

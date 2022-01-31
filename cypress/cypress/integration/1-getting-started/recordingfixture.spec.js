@@ -20,6 +20,15 @@ describe('recording page', () => {
       cy.get('#email').type(this.user.Email)
       cy.get('#password').type(this.user.Password)
       cy.get('form').submit()
+      cy.contains('speeches')
+      cy.contains('Activity')
+    })
+    it('Recording the video', function () {
+      cy.visit("https://speechpundit.com/#/signin")
+      cy.get('#email').type(this.user.Email)
+      cy.get('#password').type(this.user.Password)
+      cy.get('form').submit()
+
       cy.contains('Record').click()  
             cy.contains('Click here to practice your speech').click()  
     })

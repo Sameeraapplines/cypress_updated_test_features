@@ -159,9 +159,9 @@ describe("Adding a new student" ,() => {
 
 })
 describe("Assigning task" ,() => {
-  it.only("Allocating tasks to students in class" , function(){
-    cy.visit("https://dev02.speechpundit.com/#/home")
-    cy.contains('sign in').click()
+  it("Allocating tasks to students in class" , function(){
+    cy.visit("https://dev02.speechpundit.com")
+    cy.contains('Sign in').click()
     cy.get('#email').type("sameera+779@applines.com")
       cy.get('#password').type('root12345')
       cy.get('form').submit()
@@ -188,6 +188,19 @@ describe("Assigning task" ,() => {
 
 
   })
+  it.only("Viewing analytics of a student speech" , function(){
+    cy.visit("https://dev02.speechpundit.com")
+    cy.contains('Sign in').click()
+    cy.get('#email').type("sameera+779@applines.com")
+      cy.get('#password').type('root12345')
+      cy.get('form').submit()
+    //  cy.visit('https://dev02.speechpundit.com/#/user/groups')
+      // cy.get('#menu-2\  > img').invoke('show')
+      // cy.get('#menu-2\  > img').invoke('show').click({force:true})
+      // cy.get('#menu-2\  > img').trigger('mouseover')
+
+  })
+
 
 
 

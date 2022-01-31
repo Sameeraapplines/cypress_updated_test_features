@@ -10,7 +10,7 @@ describe('Student feedback', () => {
     })
   
     // the test callback is in "function () { ... }" form
-    it('Student feedback(coach)', function () {
+    it.only('Student feedback(coach)', function () {
       // this.user exists
       cy.visit("https://dev02.speechpundit.com/#/signin") //problem with email
 
@@ -34,7 +34,7 @@ describe('Student feedback', () => {
     
     //  cy.get(':nth-child(2) > .text-center > .fas').click()
     })
-    it.only('Student feedback(Student)', function () {
+    it('Student feedback(Student) ', function () {
       // this.user exists
       cy.visit("https://dev02.speechpundit.com/#/signin") //problem with email
 
